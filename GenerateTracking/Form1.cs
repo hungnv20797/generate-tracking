@@ -33,8 +33,7 @@ namespace GenerateTracking
             string CredentialsFilePath = "./client_secret.json";
 
             string filePath = "time.txt";
-
-            string OutputCsvFilePath = "ex.csv";
+            
             UserCredential credential;
 
             using (var stream = new FileStream("gg.json", FileMode.Open, FileAccess.Read))
@@ -53,7 +52,7 @@ namespace GenerateTracking
                 ApplicationName = ApplicationName,
             });
 
-            string range = "sheet1!A5000:E1000000";
+            string range = "工作表1!A5000:E1000000";
 
             SpreadsheetsResource.ValuesResource.GetRequest request =
                 service.Spreadsheets.Values.Get(SpreadsheetId, range);
@@ -89,7 +88,7 @@ namespace GenerateTracking
 
                     do { row.Add(""); } while (row.Count < 5);
                     string time = row[0].ToString();
-                    if (string.Compare(time, startDate) > 0 && string.Compare(time, endDate) < 0)
+                    if (string.Compare(time, startDate) >= 0 && string.Compare(time, endDate) <= 0)
                     {
                         string orderNumber = row[3].ToString();
                         string logisticTracking = row[4].ToString();
@@ -170,11 +169,7 @@ namespace GenerateTracking
         {
             GenerateTracking();
         }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+        
 
         public string getCarrier(string trackingNumber)
         {
