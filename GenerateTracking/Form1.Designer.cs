@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.btnExportYO = new System.Windows.Forms.Button();
+            this.btnExportFM = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnExportYO
@@ -41,11 +42,22 @@
             this.btnExportYO.UseVisualStyleBackColor = true;
             this.btnExportYO.Click += new System.EventHandler(this.btnExportYO_Click);
             // 
+            // btnExportFM
+            // 
+            this.btnExportFM.Location = new System.Drawing.Point(12, 117);
+            this.btnExportFM.Name = "btnExportFM";
+            this.btnExportFM.Size = new System.Drawing.Size(321, 50);
+            this.btnExportFM.TabIndex = 1;
+            this.btnExportFM.Text = "Export FM";
+            this.btnExportFM.UseVisualStyleBackColor = true;
+            this.btnExportFM.Click += new System.EventHandler(this.btnExportFM_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(345, 446);
+            this.Controls.Add(this.btnExportFM);
             this.Controls.Add(this.btnExportYO);
             this.Name = "Form1";
             this.Text = "Generate Tracking";
@@ -56,6 +68,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnExportYO;
+        private System.Windows.Forms.Button btnExportFM;
     }
 }
 
